@@ -42,14 +42,14 @@ body {
 }
 
 .topnav a:hover {
-  background-color: #ddd; <!-- Menu Bar Hover Background -->
+  background-color: #333; <!-- Menu Bar Hover Background -->
   color: black;
 }
 
 .topnav a.active {
-  background-color: #C218C2; <!-- Menu Bar Home Background -->
+  background-color: #f599c2; <!-- Menu Bar Home Background -->
 
-  color: white;
+  color: pink;
 }
 
 .topnav .icon {
@@ -81,8 +81,22 @@ body {
 
 <!-- End of stylesheet settings for responsive menu -->
 
+
+<!-- Script to check all form fields are entered -->
+<script>
+function validateForm() {
+  let x = document.forms["contactForm"]["name"].value;
+  let y = document.forms["contactForm"]["email"].value;
+  let z = document.forms["contactForm"]["message"].value;
+  if (x == "" || y == "" || z == "")  {
+    alert("All fields must be completed.");
+    return false;
+  }
+}
+</script>
+
 </head>
-<body>
+<body style="background-color: #fad1e3;">
 
 <!-- Set up responsive menu -->
 <!-- Load an icon library to show a hamburger menu (bars) on small screens -->
@@ -112,11 +126,11 @@ function myFunction() {
 
 <h1> Athena Makeup - Planet Friendly Beauty</h1>
 <h2>Contact Us</h2>
-<p>Lorem ipsum dolor sit amet. Qui aliquam magnam in consequatur dolores est architecto officiis. Est molestiae esse vel odio obcaecati ut tenetur reprehenderit a omnis deserunt aut numquam velit ut odio numquam.</p>
+<p>We’d love to hear from you! Whether you have questions about our products, suggestions for new products, or just want to share your thoughts, we’re here to help. Your feedback and queries mean the world to us and help us continue to create products you love. Get in touch through our contact page, and we’ll get back to you as quickly as possible. Let’s keep the conversation going. At Athena Makeup we’re all about making your beauty experience the best it can be!</p>
 
-<p>Et officiis maxime ut inventore voluptatem est doloremque internos? Ut animi velit et nihil fuga et dolorum ipsum cum tempora officia non reiciendis atque sit reprehenderit incidunt. Qui neque illo eum reprehenderit doloremque id earum Quis sed iste temporibus aut quos omnis rem facere quos ut nihil voluptas.</p>
+<p>One of our sales reps will get back to you within 48 hours.</p>
 
-<form action=""> <!-- This action needs to be adapted to use the backgrounf server form handling options -->
+<form name="contactForm" action="/action_page.php" onsubmit="return validateForm()" method="post"> <!-- This action needs to be adapted to use the backgrounf server form handling options -->
 <p>
 <label for="name">Name:</label><br>
   <input type="text" id="name" name="name" value=""><br>
